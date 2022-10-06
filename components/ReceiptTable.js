@@ -8,8 +8,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import _ from 'lodash'
 import { ViewReceiptsModal } from "./ViewReceiptsModal";
-export const ReceiptTable = (props) =>{
-    const dispatch = useDispatch()
+export const ReceiptTable = () =>{
     let receiptList = useSelector(state => state.parking.receiptList)
 
     const [receipts, setReceipts] = useState([])
@@ -23,13 +22,13 @@ export const ReceiptTable = (props) =>{
       <div>
         <Box mb={1} sx={{ display: 'flex', justifyContent: 'space-between' }} >  
             <Typography variant="h6" component="span">
-                Request
+                Current Unparked Cars
             </Typography>
         </Box>
         <Box sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
             <TableContainer component={Paper}  >
                 <Table  aria-label="simple table">
-                    <TableHead sx={{background: '#0ea5e9'}} align="center">
+                    <TableHead sx={{background: '#34d399'}} align="center">
                     <TableRow >
                         <TableCell sx={{ color: '#ffffff'}}>Car Type</TableCell>
                         <TableCell sx={{ color: '#ffffff'}}>Date</TableCell>

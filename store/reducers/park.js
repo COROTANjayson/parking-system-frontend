@@ -61,11 +61,8 @@ export const parkingStore = createSlice({
                         let prevDiff = Math.abs(prevVal.slot - slot);
                         let curDiff = Math.abs(curtVal.slot - slot);
                      
-                                // if(car.size <=curtVal.size.value  ){
                                     return curDiff<prevDiff ? curtVal : prevVal;
-                                // } else{
-                                //     return  prevVal 
-                                // }
+                            
                     });
                    
                         const result = state.map.map((value) => {
@@ -149,9 +146,6 @@ export const parkingStore = createSlice({
                 state.exceedingHoursFee = charge
             }
            
-            
-           
-
         },
         totalParkFees: (state, action) => {
             const { slot} = action.payload
@@ -179,9 +173,7 @@ export const parkingStore = createSlice({
                     return value
                 }
             })
-            // console.log('slot',slot)
             const result = state.map.map((value)=>{
-                // console.log(value.slot)
                 if(parseInt(slot )=== value.slot){
                     console.log(true)
                     value.entryPoint = letter
@@ -190,7 +182,6 @@ export const parkingStore = createSlice({
                     delete value.carSize 
                     delete value.dateTimeParked 
                 }
-                // console.log(value.entryPoint)
                 return value
             })
 

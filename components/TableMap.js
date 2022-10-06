@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getMap,  addNewEntryPoint } from "../store/reducers/park";
 import _ from 'lodash'
 import { UnParkModal } from "./UnparkModal";
-
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 export const TableMap = (props) =>{
     const dispatch = useDispatch()
     const [entPoint, setEntPoint] = useState('')
@@ -68,6 +68,7 @@ export const TableMap = (props) =>{
                   onChange={handleEntryPoint}
                 >
                   {map.map((data, i)=>{
+
                       if(!data.entryPoint){
                         return( 
                           <MenuItem key={i} value={data.slot}>Slot: {data.slot}</MenuItem>
@@ -87,11 +88,11 @@ export const TableMap = (props) =>{
         <Box sx={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
             <TableContainer component={Paper}  >
                 <Table  aria-label="simple table">
-                    <TableHead sx={{background: '#0ea5e9'}} align="center">
-                    <TableRow >
-                        <TableCell sx={{ color: '#ffffff'}}>Slot</TableCell>
-                        <TableCell sx={{ color: '#ffffff'}}>Size</TableCell>
-                        <TableCell sx={{ color: '#ffffff'}}>Car Parked</TableCell>
+                    <TableHead sx={{background: '#34d399'}} align="center">
+                    <TableRow>
+                        <TableCell sx={{ color: '#ffffff', fontSize: 'large'}}>Slot</TableCell>
+                        <TableCell sx={{ color: '#ffffff', fontSize: 'large'}}>Size</TableCell>
+                        <TableCell sx={{ color: '#ffffff', fontSize: 'large'}}>Car Parked</TableCell>
                         <TableCell></TableCell>
                     </TableRow>
                     </TableHead>
